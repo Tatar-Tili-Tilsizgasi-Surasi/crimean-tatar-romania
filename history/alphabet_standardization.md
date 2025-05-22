@@ -37,11 +37,11 @@ Following the discussions, a definitive proposed alphabet of **33 letters** was 
 | E e       | e     | M m       | me    | Ţ ț       | te    |
 | F f       | fe    | N n       | ne    | U u       | u     |
 | G g       | ge    | Ñ ñ       | eñ    | Ú ú       | ú     |
-| Ğ ğ       | ğe    | O o       | o     | V v       | ve    |
+| Ǧ ǧ       | ǧe    | O o       | o     | V v       | ve    |
 | H h       | he    | Ó ó       | ó     | W w       | we    |
 | Í í       | í     |           |       | Y y       | ye    |
 |           |       |           |       | Z z       | ze    |
 
-*Note:* The document lists `Č č` and `Ğ ğ` here, contrasting with `Ç ç` and `Ğ ğ` in Murat's 2018 table, and includes `Ţ ț` which is not in Murat's table. The system described by Murat in 2018 appears to be an evolution or specific implementation (likely the 1985 one mentioned) of these earlier efforts, resulting in the 32-letter alphabet he presents.
+*Note:* The document lists `Č č` and `Ǧ ǧ` here, contrasting with `Ç ç` and `Ğ ğ` in Murat's 2018 table, and includes `Ţ ț` which is not in Murat's table. The system described by Murat in 2018 appears to be an evolution or specific implementation (likely the 1985 one mentioned) of these earlier efforts, resulting in the 32-letter alphabet he presents.
 
 This standardization effort provided a basis for literacy and education in Crimean Tatar in Romania, although the usage and status of certain sounds (like Ç, F, H, V, and historically Ţ) vary between authentic everyday speech and academic contexts.
