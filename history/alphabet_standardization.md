@@ -12,8 +12,6 @@ A commission was established in 1954, including representatives from the Ministr
 
 Discussions involved linguists like Vladimir Drîmba (Institute of Linguistics), pedagogues, and Tatar intellectuals (Ziyaeddin Ismail, Ali Ahmet Naği, Ekrem Mehmet Ali, and others). The goal was to base the alphabet on the Latin script, specifically incorporating elements from both the modern Turkish and Romanian alphabets, augmented with special diacritics for sounds unique to Tatar.
 
-The proposed alphabet aimed to facilitate learning Romanian while providing a written standard for Tatar, aligning with the socialist cultural policies of the time, similar to how other languages in the Soviet Union adopted Cyrillic alphabets based on Russian.
-
 Key debates included:
 
 *   **Special Vowels:** Proposing dedicated letters for specific Tatar vowels (`Í í`, `Î î`, `Ó ó`, `Ú ú`). Debates occurred over the specific diacritics (e.g., accent vs. breve).
