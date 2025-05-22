@@ -11,7 +11,7 @@ The project covers the following aspects of the language:
 *   **Phonology:** Rules governing sound combinations, vowel harmony, syllable structure, and phonetic changes.
 *   **Grammar & Morphology:** (Placeholders for future content) Basic grammatical structures and word formation.
 *   **History:** Context regarding the standardization of the alphabet in Romania.
-*   **Tools:** (Optional) Scripts or utilities related to the language, such as the provided syllabification script.
+*   **Tools:** Scripts or utilities related to the language, such as the provided syllabification script.
 *   **References:** List of source materials used.
 
 A key focus is understanding the distinction between "authentic" Tatar spoken by older generations and "academic" forms, particularly regarding loanwords and sounds not native to the authentic language.
@@ -24,7 +24,7 @@ A key focus is understanding the distinction between "authentic" Tatar spoken by
 *   `grammar/`: (Placeholder) For grammatical information.
 *   `morphology/`: (Placeholder) For morphological information.
 *   `history/`: Documents related to the alphabet's history and standardization.
-*   `tools/`: (Optional) Code and data files for utilities like the syllabification script.
+*   `tools/`: Code and data files for utilities like the syllabification script.
 *   `references/`: Source citations.
 
 ## Contributing
