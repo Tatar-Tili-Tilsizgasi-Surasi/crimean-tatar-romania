@@ -14,7 +14,7 @@ The project covers the following aspects of the language:
 *   **Tools:** Scripts or utilities related to the language, such as the provided syllabification script.
 *   **References:** List of source materials used.
 
-A key focus is understanding the distinction between "authentic" Tatar spoken by older generations and "academic" forms, particularly regarding loanwords and sounds not native to the authentic language.
+A key focus is understanding the distinction between "authentic" Tatar spoken and "academic" forms, particularly regarding loanwords and sounds not native to the authentic language.
 
 ## Repository Structure
 
