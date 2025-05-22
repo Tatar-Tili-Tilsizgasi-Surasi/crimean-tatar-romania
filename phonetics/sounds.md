@@ -67,6 +67,6 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 
 *Note on G, K, L, N, R, S, Ş, T, Y, W, Z:* Although the table often lists the same IPA symbol for both hard and soft variants, the source text emphasizes that these determined sounds adapt their articulation slightly to harmonize with the determinant vowel's tongue root position (Section 4.2.1).
 
-*Note on Ç and Ğ:* While the table provides IPA /t͡ʃ/ and /d͡ʒ/, the source notes these are quasi non-existent in authentic Dobruja Tatar and treated as academic, often shifting to `Ş` and `J` respectively.
+*Note on Ç:* While the table provides IPA /t͡ʃ/, the source notes these are quasi non-existent in authentic Dobruja Tatar and treated as academic, often shifting to `Ş` respectively.
 
 *Note on F, H, V:* These letters and their sounds occur only in loanwords and are considered academic. Authentic reading typically naturalizes them.
