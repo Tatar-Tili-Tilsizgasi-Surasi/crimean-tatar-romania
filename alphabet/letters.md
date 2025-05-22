@@ -16,7 +16,7 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 6 | E e             | E          | Mid unrounded **ATR (soft) vowel** /e/.                               |
 | 7 | F f             | Fe         | **Hard** and *soft* voiceless labio-dental fricative /f/. Occurs only in loanwords (academic). Authentic reading naturalizes to (P). |
 | 8 | G g             | Ge         | Soft voiced palatal stop /c/ (allophone soft voiced velar stop /g/) (linked to ATR/soft vowels). Hard voiced uvular fricative /ʁ/ (linked to RTR/hard vowels). |
-| 9 | Ğ ğ             | Ğe         | **Hard** voiced palato-alveolar affricate /d͡ʒ/. *Soft* voiced palato-alveolar affricate /d͡ʒ/. Quasi non-existent in authentic Dobruja Tatar, often shifting to (J). Treated as academic. |
+| 9 | Ğ ğ             | Ğe         | **Hard** voiced palato-alveolar affricate /d͡ʒ/. *Soft* voiced palato-alveolar affricate /d͡ʒ/. |
 | 10| H h             | He         | **Hard** voiceless glottal fricative /h/. *Soft* voiceless uvular fricative /x/. Occurs only in loanwords (academic). Authentic reading naturalizes to (K) or (Q). |
 | 11| I i             | I          | High unrounded **ATR (soft) vowel** /i/.                               |
 | 12| Í í             | Hemzelí I, Kıska I, Zayıf I | High unrounded half-advanced **ATR (soft) vowel** /ɨ̞/. Specific to Tatar. Can become mid unrounded half-advanced ATR or soft /ə/ (schwa) at word end (dilatation). |
