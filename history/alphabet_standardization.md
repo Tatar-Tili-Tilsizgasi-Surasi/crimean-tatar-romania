@@ -19,7 +19,7 @@ Key debates included:
 *   **G and K variations:** How to represent the velar, palatal, and uvular variants (`g`/`k` vs. `q`/`ʁ`). Proposals included special spellings like `gâ`, `kâ`, `lâ` (using circumflex over the vowel) or using different consonant combinations (`gy`/`ky`/`ly`) or diacritics (`g'`, `k'`, `l'`).
 *   **Ñ:** Representation for the nasal sounds. Proposals included `ñ`, `η`, or `ng`.
 *   **V and W:** Debated whether to use separate letters (`v`, `w`) or represent semivowels with `u` and `i` as in Romanian.
-*   **Ţ ţ:** The historical documents mention a letter `Ţ ţ` (ţe) representing the sound [ts], which was treated as academic and naturalized to `S s`. This letter is not present in the alphabet described in Taner Murat's later work, suggesting it was fully naturalized.
+*   **Ţ ţ:** The historical documents mention a letter `Ţ ţ` (ţe) representing the sound [ts], which was treated as academic and naturalized to `S s`. This letter is not present in the alphabet described in Taner Murat's later work, suggesting it was fully naturalized by using only `S s` instead.
 
 ## The Proposed 1956 Alphabet (33 Letters)
 
