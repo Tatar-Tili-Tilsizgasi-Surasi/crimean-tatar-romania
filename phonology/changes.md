@@ -64,7 +64,7 @@ Addition of a sound without changing meaning, often to break up consonant cluste
     *   `muamele` > `muwamele` 'method'
     *   *Note:* Sequences of identical vowels are accepted without insertion (`şiir`, `fiil`, `faal`, `matbaa`).
 
-*   Paragoge (Uzatuw): Adding a semivowel (`y` or `w`) at the end of loanwords that would otherwise end in a "forbidden" sound (`I`, `U`, `Ú` at the end are dissonant in authentic Tatar). Academic feature.
+*   Paragoge (Uzatuw): Adding a semivowel (`y` or `w`) at the end of loanwords that would otherwise end in a "forbidden" sound (`I`, `U`, `Ú` at the end are dissonant in Tatar). Academic feature.
     *   Ending in `I i`: add `y` (e.g., `medeni` > `medeniy` 'civilized')
     *   Ending in `U u` or `Ú ú`: add `w` (e.g., `arzu` > `arzuw` 'wish')
 
