@@ -47,8 +47,8 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 3.  **D d**: **Hard** voiced dental stop /d/ (`dal` [dal] 'branch') and *soft* voiced dental stop /d/ (`deren` [deren] 'deep').
 4.  **F f**: **Hard** voiceless labio-dental fricative /f/ (`fal` [fal] 'destiny') and *soft* voiceless labio-dental fricative /f/ (`fen` [fen] 'technics'). Occurs only in loanwords (academic); naturalized to `P` in authentic reading.
 5.  **G g**: *Soft* voiced palatal stop /c/ (`gene` [tene] 'again') with allophone *soft* voiced velar stop /g/ (`gúl` [gul] 'flower'). **Hard** voiced uvular fricative /ʁ/ (`gam` [ʁam] 'grief').
-6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /d͡ʒ/ (`ğar` [d͡ʒar] 'abyss') and *soft* voiced palato-alveolar affricate /d͡ʒ/ (`ğer` [d͡ʒer] 'place', 'ground'). Treated as academic; often shifts to `J`.
-7.  **H h**: **Hard** voiceless glottal fricative /h/ (`taht` [taht] 'throne') and *soft* voiceless uvular fricative /x/ (`heşt` [xeft] 'eight'). Occurs only in loanwords (academic); naturalized to `K` or `Q` in authentic reading.
+6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /d͡ʒ/ (`ğar` [d͡ʒar] 'abyss') and *soft* voiced palato-alveolar affricate /d͡ʒ/ (`ğer` [d͡ʒer] 'place', 'ground'). 
+7.  **H h**: **Hard** voiceless glottal fricative /h/ (`taht` [taht] 'throne') and *soft* voiceless uvular fricative /x/ (`heşt` [xeft] 'eight'). Occurs only in loanwords (academic); naturalized to `K` or skiped in authentic reading.
 8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ/ (`taj` [taz] 'crown') and *soft* voiced palato-alveolar fricative /ʒ/ (`bej` [bez] 'beige').
 9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qal] 'stay!').
 10. **L l**: **Hard** alveolar lateral approximant /l/ (`bal` [bal] 'honey') and *soft* alveolar lateral approximant /l/ (`bel` [bel] 'waist').
