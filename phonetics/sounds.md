@@ -43,8 +43,8 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
 Determined sounds do not form syllable nuclei but accompany vowels. Their pronunciation is largely determined by the hard/soft quality of the neighboring vowel.
 
 1.  **B b**: **Hard** voiced bilabial stop /ḇ/ (`bal` [ḇaḻ] 'honey') and *soft* voiced bilabial stop /b̶/ (`bel` [b̶el̶] 'waist').
-2.  **Ç ç**: **Hard** voiceless palato-alveolar affricate /t͡ʃ/ (`ça-ça` [t͡ʃat͡ʃa] 'cha-cha') and *soft* voiceless palato-alveolar affricate /t͡ʃ/ (`çeçen` [t͡ʃet͡ʃen] 'chechen'). Treated as academic; often shifts to `Ş`.
-3.  **D d**: **Hard** voiced dental stop /d/ (`dal` [dal] 'branch') and *soft* voiced dental stop /d/ (`deren` [deren] 'deep').
+2.  **Ç ç**: **Hard** voiceless palato-alveolar affricate /ṯ͡ʃ̱/ (`ça-ça` [ṯ͡ʃ̱ɑṯ͡ʃ̱ɑ] 'cha-cha') and *soft* voiceless palato-alveolar affricate /t̶͡ʃ̶/ (`çeçen` [t̶͡ʃ̶et̶͡ʃ̶en̶] 'chechen'). Treated as academic; often shifts to `Ş`.
+3.  **D d**: **Hard** voiced dental stop /ḏ/ (`dal` [ḏɑḻ] 'branch') and *soft* voiced dental stop /d̶/ (`deren` [d̶er̶en̶] 'deep').
 4.  **F f**: **Hard** voiceless labio-dental fricative /f/ (`fal` [fal] 'destiny') and *soft* voiceless labio-dental fricative /f/ (`fen` [fen] 'technics'). Occurs only in loanwords (academic); naturalized to `P` in authentic reading.
 5.  **G g**: *Soft* voiced palatal stop /ɟ̱/ (`gene` [ɟ̱ene] 'again') with allophone *soft* voiced velar stop /g/ (`gúl` [gʉl] 'flower'). **Hard** voiced uvular fricative /ʁ/ (`gam` [ʁam] 'grief').
 6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /d͡ʒ/ (`ğar` [d͡ʒar] 'abyss') and *soft* voiced palato-alveolar affricate /d͡ʒ/ (`ğer` [d͡ʒer] 'place', 'ground'). 
