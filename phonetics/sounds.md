@@ -55,8 +55,8 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 11. **M m**: **Hard** bilabial nasal /m̱/ (`maga` [m̱ɑʁɑ] 'to me') and *soft* bilabial nasal /m̶/ (`men` [m̶en̶] 'I').
 12. **N n**: **Hard** dental nasal /ṉ/ (`ana` [ɑṉɑ] 'mother') and *soft* dental nasal /n̶/ (`ne` [n̶e] 'what').
 13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [ɑɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
-14. **P p**: **Hard** voiceless bilabial stop /p/ (`ğap` [d͡ʒap] 'close!') and *soft* voiceless bilabial stop /p/ (`ğep` [d͡ʒep] 'pocket').
-15. **R r**: **Hard** alveolar trill /r/ (`tar` [tar] 'narrow') and *soft* alveolar trill /r/ (`ter` [ter] 'sweat').
+14. **P p**: **Hard** voiceless bilabial stop /p̱/ (`ğap` [ḏ͡ʒ̱ɑp̱] 'close!') and *soft* voiceless bilabial stop /p̶/ (`ğep` [d̶͡ʒ̶ep̶] 'pocket').
+15. **R r**: **Hard** alveolar trill /ṟ/ (`tar` [ṯɑṟ] 'narrow') and *soft* alveolar trill /r̶/ (`ter` [t̶er̶] 'sweat').
 16. **S s**: **Hard** voiceless alveolar fricative /s/ (`sal` [sal] 'raft') and *soft* voiceless alveolar fricative /s/ (`sel` [sel] 'flood').
 17. **Ş ş**: **Hard** voiceless palato-alveolar fricative /ʃ/ (`şaş` [ʃaʃ] 'spread!') and *soft* voiceless palato-alveolar fricative /ʃ/ (`şeş` [ʃeʃ] 'untie').
 18. **T t**: **Hard** voiceless dental stop /t/ (`tar` [tar] 'tight', 'narrow') and *soft* voiceless dental stop /t/ (`ter` [ter] 'sweat').
