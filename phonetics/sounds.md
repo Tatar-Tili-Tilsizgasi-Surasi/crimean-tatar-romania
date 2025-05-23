@@ -57,8 +57,8 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [ɑɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
 14. **P p**: **Hard** voiceless bilabial stop /p̱/ (`ğap` [ḏ͡ʒ̱ɑp̱] 'close!') and *soft* voiceless bilabial stop /p̶/ (`ğep` [d̶͡ʒ̶ep̶] 'pocket').
 15. **R r**: **Hard** alveolar trill /ṟ/ (`tar` [ṯɑṟ] 'narrow') and *soft* alveolar trill /r̶/ (`ter` [t̶er̶] 'sweat').
-16. **S s**: **Hard** voiceless alveolar fricative /s/ (`sal` [sal] 'raft') and *soft* voiceless alveolar fricative /s/ (`sel` [sel] 'flood').
-17. **Ş ş**: **Hard** voiceless palato-alveolar fricative /ʃ/ (`şaş` [ʃaʃ] 'spread!') and *soft* voiceless palato-alveolar fricative /ʃ/ (`şeş` [ʃeʃ] 'untie').
+16. **S s**: **Hard** voiceless alveolar fricative /s̱/ (`sal` [s̱ɑḻ] 'raft') and *soft* voiceless alveolar fricative /s̶/ (`sel` [s̶el̶] 'flood').
+17. **Ş ş**: **Hard** voiceless palato-alveolar fricative /ʃ̱/ (`şaş` [ʃ̱ɑʃ̱] 'spread!') and *soft* voiceless palato-alveolar fricative /ʃ̶/ (`şeş` [ʃ̶eʃ̶] 'untie').
 18. **T t**: **Hard** voiceless dental stop /t/ (`tar` [tar] 'tight', 'narrow') and *soft* voiceless dental stop /t/ (`ter` [ter] 'sweat').
 19. **V v**: **Hard** voiced labio-dental fricative /v/ (`vals` [vals] 'waltz') and *soft* voiced labio-dental fricative /v/ (`ve` [ve] 'and'). Occurs only in loanwords (academic); naturalized to `W` or `B` in authentic reading.
 20. **W w**: **Hard** labio-velar semivowel /w/ (`taw` [taw] 'forest', 'mountain') and *soft* labio-velar semivowel /w/ (`tew` [tew] 'central', 'fundamental').
