@@ -49,9 +49,9 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 5.  **G g**: *Soft* voiced palatal stop /ɟ̱/ (`gene` [ɟ̱en̶e] 'again') with allophone *soft* voiced velar stop /g/ (`gúl` [gu̶l̶] 'flower'). **Hard** voiced uvular fricative /ʁ/ (`gam` [ʁam̱] 'grief').
 6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /ḏ͡ʒ̱/ (`ğar` [ḏ͡ʒ̱ɑṟ] 'abyss') and *soft* voiced palato-alveolar affricate /d̶͡ʒ̶/ (`ğer` [d̶͡ʒ̶er̶] 'place', 'ground'). 
 7.  **H h**: **Hard** voiceless uvular fricative /x/ (`taht` [ṯɑxṯ] 'throne') and *soft* voiceless glottal fricative /h/ (`heşt` [heʃ̶t̶] 'eight'). Occurs only in loanwords (academic); naturalized to `K` or skipped in authentic reading.
-8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ/ (`taj` [taʒ] 'crown') and *soft* voiced palato-alveolar fricative /ʒ/ (`bej` [beʒ] 'beige').
-9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qal] 'stay!').
-10. **L l**: **Hard** alveolar lateral approximant /l/ (`bal` [bal] 'honey') and *soft* alveolar lateral approximant /l/ (`bel` [bel] 'waist').
+8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ̱/ (`taj` [ṯɑʒ̱] 'crown') and *soft* voiced palato-alveolar fricative /ʒ̶/ (`bej` [b̶eʒ̶] 'beige').
+9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel̶] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl̶] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qaḻ] 'stay!').
+10. **L l**: **Hard** alveolar lateral approximant /ḻ/ (`bal` [ḇɑḻ] 'honey') and *soft* alveolar lateral approximant /l̶/ (`bel` [b̶el̶] 'waist').
 11. **M m**: **Hard** bilabial nasal /m/ (`maga` [maʁa] 'to me') and *soft* bilabial nasal /m/ (`men` [men] 'I').
 12. **N n**: **Hard** dental nasal /n/ (`ana` [ana] 'mother') and *soft* dental nasal /n/ (`ne` [ne] 'what').
 13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [aɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
