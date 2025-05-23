@@ -17,7 +17,7 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 7 | F f             | Fe         | **Hard** and *soft* voiceless labio-dental fricative /f/. Occurs only in loanwords (academic). Authentic reading naturalizes to (P). |
 | 8 | G g             | Ge         | Soft voiced palatal stop /c/ (allophone soft voiced velar stop /g/) (linked to ATR/soft vowels). Hard voiced uvular fricative /ʁ/ (linked to RTR/hard vowels). |
 | 9 | Ğ ğ             | Ğe         | **Hard** voiced palato-alveolar affricate /d͡ʒ/. *Soft* voiced palato-alveolar affricate /d͡ʒ/. |
-| 10| H h             | He         | **Hard** voiceless glottal fricative /h/. *Soft* voiceless uvular fricative /x/. Occurs only in loanwords (academic). Authentic reading naturalizes to (K) or skips. |
+| 10| H h             | He         | **Hard** voiceless glottal fricative /x/. *Soft* voiceless uvular fricative /h/. Occurs only in loanwords (academic). Authentic reading naturalizes to (K) or skips. |
 | 11| I i             | I          | High unrounded **ATR (soft) vowel** /i/.                               |
 | 12| Í í             | Hemzelí I, Kıska I, Zayıf I | High unrounded half-advanced **ATR (soft) vowel** /ɨ̞/. Specific to Tatar. Can become mid unrounded half-advanced ATR or soft /ə/ (schwa) at word end (dilatation). |
 | 13| Î î             | Kalpaklî I, Tartuwlî I | High unrounded **RTR (hard) vowel** /ɯ/. Can become mid unrounded RTR or hard /ʌ/ (schwa-like) at word end (dilatation). |
@@ -35,7 +35,7 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 25| Ş ş             | Şe         | **Hard** and *soft* voiceless palato-alveolar fricative /ʃ/.            |
 | 26| T t             | Te         | **Hard** and *soft* voiceless dental stop /t/.                          |
 | 27| U u             | U          | High rounded **RTR (hard) vowel** /u/.                                |
-| 28| Ú ú             | Noktalî U  | High rounded half-advanced **ATR (soft) vowel** /ʏ/.                     |
+| 28| Ú ú             | Noktalî U  | High rounded half-advanced **ATR (soft) vowel** /ʉ/.                     |
 | 29| V v             | Ve         | **Hard** and *soft* voiced labio-dental fricative /v/. Occurs only in loanwords (academic). Authentic reading naturalizes to (W) or (B). |
 | 30| W w             | We         | **Hard** and *soft* labio-velar semivowel /w/.                         |
 | 31| Y y             | Ye         | **Hard** and *soft* palatal semivowel /j/.                             |
