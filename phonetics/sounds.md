@@ -62,8 +62,8 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 18. **T t**: **Hard** voiceless dental stop /ṯ/ (`tar` [ṯɑṟ] 'tight', 'narrow') and *soft* voiceless dental stop /t̶/ (`ter` [t̶er̶] 'sweat').
 19. **V v**: **Hard** voiced labio-dental fricative /v̱/ (`vals` [v̱ɑḻs̱] 'waltz') and *soft* voiced labio-dental fricative /v̶/ (`ve` [v̶e] 'and'). Occurs only in loanwords (academic); naturalized to `W` or `B` in authentic reading.
 20. **W w**: **Hard** labio-velar semivowel /w̱/ (`taw` [ṯɑw̱] 'forest', 'mountain') and *soft* labio-velar semivowel /w̶/ (`tew` [t̶ew̶] 'central', 'fundamental').
-21. **Y y**: **Hard** palatal semivowel /j/ (`tay` [taj] 'foal') and *soft* palatal semivowel /j/ (`yer` [jer] 'place', 'ground').
-22. **Z z**: **Hard** voiced alveolar fricative /z/ (`taz` [taz] 'bald') and *soft* voiced alveolar fricative /z/ (`tez` [tez] 'quick').
+21. **Y y**: **Hard** palatal semivowel /j̠/ (`tay` [ṯɑj̠] 'foal') and *soft* palatal semivowel /j̶/ (`yer` [j̶er̶] 'place', 'ground').
+22. **Z z**: **Hard** voiced alveolar fricative /ẕ/ (`taz` [ṯɑẕ] 'bald') and *soft* voiced alveolar fricative /z̶/ (`tez` [t̶ez̶] 'quick').
 
 *Note on G, K, L, N, R, S, Ş, T, Y, W, Z:* Although the table often lists the same IPA symbol for both hard and soft variants, the source text emphasizes that these determined sounds adapt their articulation slightly to harmonize with the determinant vowel's tongue root position (Section 4.2.1).
 
