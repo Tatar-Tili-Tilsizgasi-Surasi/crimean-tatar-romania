@@ -8,23 +8,23 @@ Sounds are described by the Latin letter, their potential IPA transcription (whe
 
 Vowels form the nucleus of syllables and determine the tongue root position for the entire word (vowel harmony).
 
-1.  **A a**: Low unrounded **RTR (hard)** vowel /a/.
-    *   Example: `ana` [ana] 'mother'
+1.  **A a**: Low unrounded **RTR (hard)** vowel /ɑ/.
+    *   Example: `ana` [ɑṉɑ] 'mother'
 
 2.  **Á á**: Near-low unrounded **ATR (soft)** vowel /æ/. Occurs only in loanwords (academic).
-    *   Example: `sát` [sæt] 'hour', 'clock'
+    *   Example: `sáát`  [s̶ææt̶] 'hour', 'clock'
 
 3.  **E e**: Mid unrounded **ATR (soft)** vowel /e/.
-    *   Example: `sen` [sen] 'you'
+    *   Example: `sen` [s̶en̶] 'you'
 
 4.  **I i**: High unrounded **ATR (soft)** vowel /i/.
-    *   Example: `bin` [biŋ] 'thousand'
+    *   Example: `bin` [b̶iŋ] 'thousand'
 
 5.  **Í í**: High unrounded half-advanced **ATR (soft)** vowel /ɨ/. Specific to Tatar. At the word end, it can become mid unrounded half-advanced ATR or soft /ə/ (schwa) through dilatation.
-    *   Example: `bír` [bɨr] 'one', `tílí` [tɨlə] 'his tongue' (after dilatation)
+    *   Example: `bír` [b̶ɨr̶] 'one', `tílí` [t̶ɨl̶ə] 'his tongue' (after dilatation)
 
 6.  **Î î**: High unrounded **RTR (hard)** vowel /ɯ/. At the word end, it can become mid unrounded **RTR or hard** /ɤ/ (schwa-like) through dilatation.
-    *   Example: `îşan` [ɯʃan] 'mouse', `şîlapşî` [ʃɯlapʃɤ] 'trough' (after dilatation)
+    *   Example: `îşan` [ɯʃ̱ɑṉ] 'mouse', `şîlapşî` [ʃ̱ɯḻɑp̱ʃ̱ɤ] 'trough' (after dilatation)
 
 7.  **O o**: Mid rounded **RTR (hard)** vowel /o/.
     *   Example: `bo` [bo] 'this'
