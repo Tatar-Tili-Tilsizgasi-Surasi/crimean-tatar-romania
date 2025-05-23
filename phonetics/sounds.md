@@ -42,7 +42,7 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
 
 Determined sounds do not form syllable nuclei but accompany vowels. Their pronunciation is largely determined by the hard/soft quality of the neighboring vowel.
 
-1.  **B b**: **Hard** voiced bilabial stop /b/ (`bal` [bal] 'honey') and *soft* voiced bilabial stop /b/ (`bel` [bel] 'waist').
+1.  **B b**: **Hard** voiced bilabial stop /ḇ/ (`bal` [ḇaḻ] 'honey') and *soft* voiced bilabial stop /b̶/ (`bel` [b̶el̶] 'waist').
 2.  **Ç ç**: **Hard** voiceless palato-alveolar affricate /t͡ʃ/ (`ça-ça` [t͡ʃat͡ʃa] 'cha-cha') and *soft* voiceless palato-alveolar affricate /t͡ʃ/ (`çeçen` [t͡ʃet͡ʃen] 'chechen'). Treated as academic; often shifts to `Ş`.
 3.  **D d**: **Hard** voiced dental stop /d/ (`dal` [dal] 'branch') and *soft* voiced dental stop /d/ (`deren` [deren] 'deep').
 4.  **F f**: **Hard** voiceless labio-dental fricative /f/ (`fal` [fal] 'destiny') and *soft* voiceless labio-dental fricative /f/ (`fen` [fen] 'technics'). Occurs only in loanwords (academic); naturalized to `P` in authentic reading.
