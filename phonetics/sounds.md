@@ -49,7 +49,7 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 5.  **G g**: *Soft* voiced palatal stop /ɟ̱/ (`gene` [ɟ̱ene] 'again') with allophone *soft* voiced velar stop /g/ (`gúl` [gʉl] 'flower'). **Hard** voiced uvular fricative /ʁ/ (`gam` [ʁam] 'grief').
 6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /d͡ʒ/ (`ğar` [d͡ʒar] 'abyss') and *soft* voiced palato-alveolar affricate /d͡ʒ/ (`ğer` [d͡ʒer] 'place', 'ground'). 
 7.  **H h**: **Hard** voiceless uvular fricative /x/ (`taht` [taxt] 'throne') and *soft* voiceless glottal fricative /h/ (`heşt` [heʃt] 'eight'). Occurs only in loanwords (academic); naturalized to `K` or skipped in authentic reading.
-8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ/ (`taj` [taz] 'crown') and *soft* voiced palato-alveolar fricative /ʒ/ (`bej` [bez] 'beige').
+8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ/ (`taj` [taʒ] 'crown') and *soft* voiced palato-alveolar fricative /ʒ/ (`bej` [beʒ] 'beige').
 9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qal] 'stay!').
 10. **L l**: **Hard** alveolar lateral approximant /l/ (`bal` [bal] 'honey') and *soft* alveolar lateral approximant /l/ (`bel` [bel] 'waist').
 11. **M m**: **Hard** bilabial nasal /m/ (`maga` [maʁa] 'to me') and *soft* bilabial nasal /m/ (`men` [men] 'I').
