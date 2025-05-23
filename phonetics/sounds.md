@@ -27,7 +27,7 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
     *   Example: `îşan` [ɯʃ̱ɑṉ] 'mouse', `şîlapşî` [ʃ̱ɯḻɑp̱ʃ̱ɤ] 'trough' (after dilatation)
 
 7.  **O o**: Mid rounded **RTR (hard)** vowel /o/.
-    *   Example: `bo` [bo] 'this'
+    *   Example: `bo` [ḇo] 'this'
 
 8.  **Ó ó**: Mid rounded half-advanced **ATR (soft)** vowel /ɵ/.
     *   Example: `tór` [tɵr] 'background'
