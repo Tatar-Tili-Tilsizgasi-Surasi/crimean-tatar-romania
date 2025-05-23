@@ -26,7 +26,7 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 16| L l             | Le         | **Hard** alveolar lateral approximant /l/. *Soft* alveolar lateral approximant /l/. |
 | 17| M m             | Me         | **Hard** and *soft* bilabial nasal /m/.                               |
 | 18| N n             | Ne         | **Hard** and *soft* dental nasal /n/.                                 |
-| 19| Ñ ñ             | Εñ, Dalgalî Ne | **Hard** uvular nasal /ɴ/. *Soft* velar nasal /ŋ/. Word-initial `Ñ ñ` is dissonant (no words begin with it). |
+| 19| Ñ ñ             | Εñ, Dalgalî Ne | **Hard** uvular nasal /ɴ/. *Soft* velar nasal /ŋ/. |
 | 20| O o             | O          | Mid rounded **RTR (hard) vowel** /o/.                                 |
 | 21| Ó ó             | Noktalî O  | Mid rounded half-advanced **ATR (soft) vowel** /ɵ/.                     |
 | 22| P p             | Pe         | **Hard** and *soft* voiceless bilabial stop /p/.                          |
@@ -41,6 +41,6 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 31| Y y             | Ye         | **Hard** and *soft* palatal semivowel /j/.                             |
 | 32| Z z             | Ze         | **Hard** and *soft* voiced alveolar fricative /z/.                       |
 
-*Note:* Described by Murat, certain letters/sounds (`B`, `D`, `G`, `Ğ`, `I`, `Ó`, `U`, `Ú`, `V`) typically do not occur as the final letter of a word (with some exceptions like `ald`, `dad`).
+*Note:* Described by Murat, certain letters/sounds (`B`, `D`, `G`, `Ğ`, `I`, `Ó`, `U`, `Ú`, `V`) typically do not occur as the final letter of a word (with some exceptions like `ald`, `dad`). Word-initial `Ñ ñ` is dissonant (no words begin with it).
 
 The "hard" and "soft" variations of consonants are determined by the preceding vowel's tongue root position due to vowel harmony (see [Phonology: Harmony](../phonology/harmony.md)). In this documentation, **bold** is used for hard sounds/contexts and *italics* for soft sounds/contexts, following the distinction made in the source material.
