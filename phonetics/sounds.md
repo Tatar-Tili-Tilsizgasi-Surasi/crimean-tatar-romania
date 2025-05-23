@@ -53,8 +53,8 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel̶] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl̶] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qɑḻ] 'stay!').
 10. **L l**: **Hard** alveolar lateral approximant /ḻ/ (`bal` [ḇɑḻ] 'honey') and *soft* alveolar lateral approximant /l̶/ (`bel` [b̶el̶] 'waist').
 11. **M m**: **Hard** bilabial nasal /m̱/ (`maga` [m̱ɑʁɑ] 'to me') and *soft* bilabial nasal /m̶/ (`men` [m̶en̶] 'I').
-12. **N n**: **Hard** dental nasal /n/ (`ana` [ana] 'mother') and *soft* dental nasal /n/ (`ne` [ne] 'what').
-13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [aɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
+12. **N n**: **Hard** dental nasal /ṉ/ (`ana` [ɑṉɑ] 'mother') and *soft* dental nasal /n̶/ (`ne` [n̶e] 'what').
+13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [ɑɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
 14. **P p**: **Hard** voiceless bilabial stop /p/ (`ğap` [d͡ʒap] 'close!') and *soft* voiceless bilabial stop /p/ (`ğep` [d͡ʒep] 'pocket').
 15. **R r**: **Hard** alveolar trill /r/ (`tar` [tar] 'narrow') and *soft* alveolar trill /r/ (`ter` [ter] 'sweat').
 16. **S s**: **Hard** voiceless alveolar fricative /s/ (`sal` [sal] 'raft') and *soft* voiceless alveolar fricative /s/ (`sel` [sel] 'flood').
