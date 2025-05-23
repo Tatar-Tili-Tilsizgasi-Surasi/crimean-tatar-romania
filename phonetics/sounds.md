@@ -36,7 +36,7 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
     *   Example: `un` [uṉ] 'flour'
 
 10. **Ú ú**: High rounded half-advanced **ATR (soft)** vowel /ʉ/.
-    *   Example: `sút` [s̶ʉt̶] 'milk'. In the vicinity of semivowel y (rare), articulation shifts to high rounded ATR or soft /y/, close to Turkish pronunciation (e.g., `súymek` [s̶ym̶ec] 'to love').
+    *   Example: `sút` [s̶ʉt̶] 'milk'. In the vicinity of semivowel y (rare), articulation shifts to high rounded ATR or soft /y/, close to Turkish pronunciation (e.g., `súymek` [s̶yj̶m̶ec] 'to love').
 
 ## Consonants and Semivowels (Determined Sounds)
 
