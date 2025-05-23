@@ -20,11 +20,11 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
 4.  **I i**: High unrounded **ATR (soft)** vowel /i/.
     *   Example: `bin` [biŋ] 'thousand'
 
-5.  **Í í**: High unrounded half-advanced **ATR (soft)** vowel /ɨ̞/. Specific to Tatar. At the word end, it can become mid unrounded half-advanced ATR or soft /ə/ (schwa) through dilatation.
-    *   Example: `bír` [bɨ̞r] 'one', `tílí` [tilə] 'his tongue' (after dilatation)
+5.  **Í í**: High unrounded half-advanced **ATR (soft)** vowel /ɨ/. Specific to Tatar. At the word end, it can become mid unrounded half-advanced ATR or soft /ə/ (schwa) through dilatation.
+    *   Example: `bír` [bɨr] 'one', `tílí` [tɨlə] 'his tongue' (after dilatation)
 
-6.  **Î î**: High unrounded **RTR (hard)** vowel /ɯ/. At the word end, it can become mid unrounded **RTR or hard** /ʌ/ (schwa-like) through dilatation.
-    *   Example: `îşan` [ɯʃan] 'mouse', `şîlapşî` [ʃɯlapʃʌ] 'trough' (after dilatation)
+6.  **Î î**: High unrounded **RTR (hard)** vowel /ɯ/. At the word end, it can become mid unrounded **RTR or hard** /ɤ/ (schwa-like) through dilatation.
+    *   Example: `îşan` [ɯʃan] 'mouse', `şîlapşî` [ʃɯlapʃɤ] 'trough' (after dilatation)
 
 7.  **O o**: Mid rounded **RTR (hard)** vowel /o/.
     *   Example: `bo` [bo] 'this'
