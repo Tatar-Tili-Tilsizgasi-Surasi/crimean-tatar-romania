@@ -60,7 +60,7 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 16. **S s**: **Hard** voiceless alveolar fricative /s̱/ (`sal` [s̱ɑḻ] 'raft') and *soft* voiceless alveolar fricative /s̶/ (`sel` [s̶el̶] 'flood').
 17. **Ş ş**: **Hard** voiceless palato-alveolar fricative /ʃ̱/ (`şaş` [ʃ̱ɑʃ̱] 'spread!') and *soft* voiceless palato-alveolar fricative /ʃ̶/ (`şeş` [ʃ̶eʃ̶] 'untie').
 18. **T t**: **Hard** voiceless dental stop /t/ (`tar` [tar] 'tight', 'narrow') and *soft* voiceless dental stop /t/ (`ter` [ter] 'sweat').
-19. **V v**: **Hard** voiced labio-dental fricative /v/ (`vals` [vals] 'waltz') and *soft* voiced labio-dental fricative /v/ (`ve` [ve] 'and'). Occurs only in loanwords (academic); naturalized to `W` or `B` in authentic reading.
+19. **V v**: **Hard** voiced labio-dental fricative /v̱/ (`vals` [v̱ɑḻs̱] 'waltz') and *soft* voiced labio-dental fricative /v̶/ (`ve` [v̶e] 'and'). Occurs only in loanwords (academic); naturalized to `W` or `B` in authentic reading.
 20. **W w**: **Hard** labio-velar semivowel /w/ (`taw` [taw] 'forest', 'mountain') and *soft* labio-velar semivowel /w/ (`tew` [tew] 'central', 'fundamental').
 21. **Y y**: **Hard** palatal semivowel /j/ (`tay` [taj] 'foal') and *soft* palatal semivowel /j/ (`yer` [jer] 'place', 'ground').
 22. **Z z**: **Hard** voiced alveolar fricative /z/ (`taz` [taz] 'bald') and *soft* voiced alveolar fricative /z/ (`tez` [tez] 'quick').
