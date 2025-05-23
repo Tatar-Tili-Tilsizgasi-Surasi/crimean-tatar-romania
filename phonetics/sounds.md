@@ -50,9 +50,9 @@ Determined sounds do not form syllable nuclei but accompany vowels. Their pronun
 6.  **Ğ ğ**: **Hard** voiced palato-alveolar affricate /ḏ͡ʒ̱/ (`ğar` [ḏ͡ʒ̱ɑṟ] 'abyss') and *soft* voiced palato-alveolar affricate /d̶͡ʒ̶/ (`ğer` [d̶͡ʒ̶er̶] 'place', 'ground'). 
 7.  **H h**: **Hard** voiceless uvular fricative /x/ (`taht` [ṯɑxṯ] 'throne') and *soft* voiceless glottal fricative /h/ (`heşt` [heʃ̶t̶] 'eight'). Occurs only in loanwords (academic); naturalized to `K` or skipped in authentic reading.
 8.  **J j**: **Hard** voiced palato-alveolar fricative /ʒ̱/ (`taj` [ṯɑʒ̱] 'crown') and *soft* voiced palato-alveolar fricative /ʒ̶/ (`bej` [b̶eʒ̶] 'beige').
-9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel̶] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl̶] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qaḻ] 'stay!').
+9.  **K k**: *Soft* voiceless palatal stop /c/ (`kel` [cel̶] 'come!') with allophone *soft* voiceless velar stop /k/ (`kól` [kɵl̶] 'lake'). **Hard** voiceless uvular stop /q/ (`kal` [qɑḻ] 'stay!').
 10. **L l**: **Hard** alveolar lateral approximant /ḻ/ (`bal` [ḇɑḻ] 'honey') and *soft* alveolar lateral approximant /l̶/ (`bel` [b̶el̶] 'waist').
-11. **M m**: **Hard** bilabial nasal /m/ (`maga` [maʁa] 'to me') and *soft* bilabial nasal /m/ (`men` [men] 'I').
+11. **M m**: **Hard** bilabial nasal /m̱/ (`maga` [m̱ɑʁɑ] 'to me') and *soft* bilabial nasal /m̶/ (`men` [m̶en̶] 'I').
 12. **N n**: **Hard** dental nasal /n/ (`ana` [ana] 'mother') and *soft* dental nasal /n/ (`ne` [ne] 'what').
 13. **Ñ ñ**: **Hard** uvular nasal /ɴ/ (`añ` [aɴ] 'conscience') and *soft* velar nasal /ŋ/ (`eñ` [eŋ] 'most'). Word-initial `Ñ ñ` is dissonant.
 14. **P p**: **Hard** voiceless bilabial stop /p/ (`ğap` [d͡ʒap] 'close!') and *soft* voiceless bilabial stop /p/ (`ğep` [d͡ʒep] 'pocket').
