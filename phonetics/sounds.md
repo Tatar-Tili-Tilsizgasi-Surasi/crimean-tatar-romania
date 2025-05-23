@@ -12,7 +12,7 @@ Vowels form the nucleus of syllables and determine the tongue root position for 
     *   Example: `ana` [ɑṉɑ] 'mother'
 
 2.  **Á á**: Near-low unrounded **ATR (soft)** vowel /æ/. Occurs only in loanwords (academic).
-    *   Example: `sáát`  [s̶ææt̶] 'hour', 'clock'. But the group of letters `aá` does not symbolize two adjacent vowels, being a writing convention that shows that the reading is done according to the first vowel in the group and the inflection of the word is done according to the second vowel in the group. For example, the reading of the word `kaár` 'care' is identical to that of `kar` [qaṟ] 'snow', but in the ablative case they will become `kaárden` [qɑṟd̶en̶] 'of/from care', respectively `kardan` [qɑṟḏɑṉ] 'of/from snow'. The group of letters `áa` must be treated similarly. For example, the word `nikáa` 'wedding' is read as [n̶icæ] and its dative will be `nikáaga` [n̶icæʁɑ] 'to/to the wedding'.
+    *   Example: `sáát`  [s̶ææt̶] 'hour', 'clock'. But the group of letters `aá` does not symbolize two adjacent vowels, being a writing convention that shows that the reading is done according to the first vowel in the group and the inflection of the word is done according to the second vowel in the group. For example, the reading of the word `kaár` 'care' is identical to that of `kar` [qaṟ] 'snow', but in the ablative case they will become `kaárden` [qɑṟd̶en̶] 'from care', respectively `kardan` [qɑṟḏɑṉ] 'from snow'. The group of letters `áa` must be treated similarly. For example, the word `nikáa` 'wedding' is read as [n̶icæ] and its dative will be `nikáaga` [n̶icæʁɑ] 'to the wedding'.
 
 3.  **E e**: Mid unrounded **ATR (soft)** vowel /e/.
     *   Example: `sen` [s̶en̶] 'you'
