@@ -20,7 +20,7 @@ The alphabet is presented below, noting key distinctions, particularly between "
 | 10| H h             | He         | **Hard** voiceless glottal fricative /x/. *Soft* voiceless uvular fricative /h/. Occurs only in loanwords (academic). Authentic reading naturalizes to (K) or skips. |
 | 11| I i             | I          | High unrounded **ATR (soft) vowel** /i/.                               |
 | 12| Í í             | Hemzelí I, Kıska I, Zayıf I | High unrounded half-advanced **ATR (soft) vowel** /ɨ̞/. Specific to Tatar. Can become mid unrounded half-advanced ATR or soft /ə/ (schwa) at word end (dilatation). |
-| 13| Î î             | Kalpaklî I, Tartuwlî I | High unrounded **RTR (hard) vowel** /ɯ/. Can become mid unrounded RTR or hard /ʌ/ (schwa-like) at word end (dilatation). |
+| 13| Î î             | Kalpaklî I, Tartuwlî I | High unrounded **RTR (hard) vowel** /ɯ/. Can become mid unrounded RTR or hard /ɤ/ (schwa-like) at word end (dilatation). |
 | 14| J j             | Je         | **Hard** and *soft* voiced palato-alveolar fricative /ʒ/.               |
 | 15| K k             | Ke         | Soft voiceless palatal stop /c/ (allophone soft voiceless velar stop /k/). Hard voiceless uvular stop /q/. |
 | 16| L l             | Le         | **Hard** alveolar lateral approximant /l/. *Soft* alveolar lateral approximant /l/. |
