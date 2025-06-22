@@ -1,17 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Latin-Cyrillic Transliterator</title>
+    <title>Latin to Cyrillic Transliterator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        textarea, #output {
+            width: calc(100% - 24px); /* Adjust width for padding and border */
+            max-width: 700px; /* Max width for larger screens */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding/border in width */
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        textarea {
+            min-height: 120px; /* Give input textarea more height */
+            resize: vertical; /* Allow vertical resizing */
+            overflow: auto;
+        }
+
+        #output {
+            min-height: 150px; /* Give output div more height */
+            background-color: #eef; /* Light blue background for output */
+            overflow: auto;
+            white-space: pre-wrap; /* Preserve line breaks and wrap text */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px; /* Keep margin in case more buttons are added later */
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Optional: Add some responsiveness */
+        @media (max-width: 768px) {
+            textarea, #output {
+                width: calc(100% - 20px); /* Adjust padding for smaller screens */
+                padding: 10px;
+            }
+            button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Latin to Cyrillic Transliterator</h1>
+
+    <div class="container">
+        <label for="input">Input Latin:</label>
+        <textarea id="input" placeholder="Enter text here..."></textarea>
+    </div>
+
+    <div class="buttons">
+        <button onclick="transliterate()">Transliterate</button>
+        
+    </div>
+
+    <div class="container">
+         <label for="output">Output Cyrillic:</label>
+         <div id="output"></div>
+    </div>
+
+
     <script>
         function transliterate() {
             var input = document.getElementById("input").value;
             var output = document.getElementById("output");
             var transliteratedText = "";
 
+            // Diagraphs must be checked before single letters
             var diagraphs = {
                 'Ya': 'Я', 'YA': 'Я',
                 'ya': 'я', 'Yu': 'Ю', 'YU': 'Ю', 'yu': 'ю', 'Yú': 'Ю', 'YÚ': 'Ю',
                 'yú': 'ю', 'Ts': 'Ц', 'TS': 'Ц', 'ts': 'ц', 'Şç': 'Щ', 'ŞÇ': 'Щ', 'şç': 'щ'
+                // Add any other multi-character mappings here
             };
 
             var letters = {
@@ -27,42 +131,43 @@
                 'S': 'С', 's': 'с', 'Ş': 'Ш', 'ş': 'ш',
                 'T': 'Т', 't': 'т', 'U': 'У', 'u': 'у', 'Ú': 'Ү', 'ú': 'ү', 'V': 'В', 'v': 'в',
                 'W': 'Ў', 'w': 'ў', 'Y': 'Й', 'y': 'й', 'Z': 'З', 'z': 'з'
+                // Add any other single character mappings here
             };
 
             for (var i = 0; i < input.length; i++) {
                 var currentChar = input[i];
-                var nextChar = input[i + 1];
+                var nextChar = input[i + 1]; // Lookahead for diagraphs
 
-                if (diagraphs.hasOwnProperty(currentChar + nextChar)) {
-                    transliteratedText += diagraphs[currentChar + nextChar];
-                    i++;
-                } else if (letters.hasOwnProperty(currentChar)) {
+                // Ignore the single quote character
+                if (currentChar === "'") {
+                    continue; // Skip this character and move to the next iteration
+                }
+
+                // 1. Check for diagraphs (two-character combinations) FIRST
+                // Ensure there's a next character to check before forming diagraph
+                if (nextChar !== undefined) {
+                     var diagraph = currentChar + nextChar;
+                     if (diagraphs.hasOwnProperty(diagraph)) {
+                        transliteratedText += diagraphs[diagraph];
+                        i++; // Skip the next character as it was part of the diagraph
+                        continue; // Move to the next iteration after processing diagraph
+                    }
+                }
+
+                // 2. If not a diagraph, check for single letters
+                if (letters.hasOwnProperty(currentChar)) {
                     transliteratedText += letters[currentChar];
                 } else {
+                    // 3. If not a letter or diagraph (and not a quote), keep the character
                     transliteratedText += currentChar;
                 }
             }
 
-            output.innerHTML = transliteratedText;
+            // Use textContent instead of innerHTML to correctly display newlines and prevent potential issues
+            output.textContent = transliteratedText;
         }
 
-        function copyToClipboard() {
-            var output = document.getElementById("output");
-            navigator.clipboard.writeText(output.innerText).then(function() {
-                alert("Copied to clipboard!");
-            }, function(err) {
-                console.error("Could not copy text: ", err);
-            });
-        }
+        
     </script>
-</head>
-<body>
-    <h1>Latin-Cyrillic Transliterator</h1>
-    <label for="input">Input Latin:</label>
-    <input type="text" id="input" style="width: 400px; height: 30px; border: 1px solid #000; overflow: auto;">
-    <button onclick="transliterate()">Transliterate</button>
-    <br>
-    <label for="output">Output Cyrillic:</label>
-    <div id="output" style="width: 400px; height: 60px; border: 1px solid #000; overflow: auto;"></div>
 </body>
 </html>
