@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin to Old Turkic Transliteration</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        textarea {
+            width: 98%;
+            min-height: 150px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        #output-text {
+             /* Specify a font that supports Old Turkic Runes */
+            font-family: 'Arial Unicode MS', 'Segoe UI Historic', 'Noto Sans Old Turkic', sans-serif;
+            direction: rtl; /* Old Turkic is read RTL */
+            text-align: right; /* Align text to the right for RTL */
+        }
+        button {
+            display: block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left; /* Keep header alignment left as table direction is not changed globally */
+        }
+         td.script-example {
+             /* Ensure examples in table also use the correct font and direction if needed */
+             font-family: 'Arial Unicode MS', 'Segoe UI Historic', 'Noto Sans Old Turkic', sans-serif;
+             font-size: 1.2em;
+             direction: ltr; /* Keep individual glyph examples LTR for clarity in table */
+             text-align: left; /* Keep individual glyph examples left-aligned */
+         }
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Latin to Old Turkic Transliteration</h1>
+
+    <textarea id="input-text" placeholder="Enter Latin text here..."></textarea>
+
+    <button id="transliterate-button">Transliterate</button>
+
+    <h2>Transliterated Old Turkic Script</h2>
+    <textarea id="output-text" readonly placeholder="Transliterated text will appear here..."></textarea>
+
+
+    <script>
+        // --- Mapping Definitions (JavaScript equivalents) ---
+
+        // Vowel glyphs (written at the beginning and end of a word/segment in this implementation)
+        // Added ä, ö, ü, ı based on common usage and examples
+        const VOWEL_GLYPHS = {
+            'a': '𐰀', 'á': '𐰀', 'ä': '𐰀', 'e': '𐰀',
+            'i': '𐰃', 'í': '𐰃', 'î': '𐰃', 'ı': '𐰃',
+            'o': '𐰆', 'u': '𐰆',
+            'ó': '𐰇', 'ú': '𐰇', 'ö': '𐰇', 'ü': '𐰇',
+        };
+
+        // Vowel types for context determination (used by getWordContext)
+        // Classified new vowels and adjusted based on standard expectations for these characters
+        const HARD_VOWELS = new Set(['a', 'î', 'o', 'u', 'ı']); // ı is typically hard
+        const SOFT_VOWELS = new Set(['á', 'ä', 'e', 'i', 'í', 'ó', 'ú', 'ö', 'ü']); // ä, ö, ü are typically soft
+        const ALL_VOWELS = new Set([...HARD_VOWELS, ...SOFT_VOWELS]);
+
+
+        // Consonants and Semivowels mapping (hard_glyph, soft_glyph - could be arrays for k)
+        // Corrected hard S glyph based on common usage  మైసూరు (U+10C95)
+        // 'k' now maps to arrays for random selection.
+        const CONSONANT_MAPPING = {
+            'b': { hard: '𐰉', soft: '𐰋' },
+            'ç': { hard: '𐰲', soft: '𐰲' }, // Same glyph
+            'd': { hard: '𐰑', soft: '𐰓' },
+            'f': { hard: '𐰯', soft: '𐰯' }, // Shares glyph
+            'g': { hard: '𐰍', soft: '𐰏' },
+            'ğ': { hard: '𐰖', soft: '𐰘' }, // Shares glyph
+            'h': { hard: '𐰶', soft: '𐰶' }, // Same glyph
+            'j': { hard: '𐰖', soft: '𐰘' }, // Shares glyph
+            'k': { hard: ['𐰸', '𐰶', '𐰴'], soft: ['𐰜', '𐰝', '𐰚'] }, // K mapping uses arrays for random selection
+            'l': { hard: '𐰞', soft: '𐰠' },
+            'm': { hard: '𐰢', soft: '𐰢' }, // Same glyph
+            'n': { hard: '𐰣', soft: '𐰤' },
+            'ñ': { hard: '𐰭', soft: '𐰤' },
+            'p': { hard: '𐰯', soft: '𐰯' }, // Shares glyph with f
+            'r': { hard: '𐰺', soft: '𐰼' },
+            's': { hard: '𐰽', soft: '𐰾' }, // Corrected hard S glyph
+            'ş': { hard: '𐱁', soft: '𐱁' }, // Same glyph
+            't': { hard: '𐱃', soft: '𐱅' },
+            'v': { hard: '𐱈', soft: '𐱈' }, // Shares glyph
+            'z': { hard: '𐰔', soft: '𐰔' }, // Same glyph
+            'y': { hard: '𐰖', soft: '𐰘' }, // Shares glyph
+            'w': { hard: '𐱈', soft: '𐱈' }, // Shares glyph
+        };
+
+
+        // Digraphs mapping (fixed glyph)
+        const DIGRAPH_MAPPING = {
+            'nğ': '𐰨', // U+10A28
+            'lt': '𐰡', // U+10A21
+            'ld': '𐰡', // U+10A21
+            'nt': '𐰦', // U+10A26
+            'nd': '𐰦', // U+10A26
+        };
+
+        // Ignored characters
+        const IGNORED_CHARS = new Set(["'", "-"]);
+
+        // Punctuation characters to be mapped to the punctuation glyph
+        const PUNCTUATION_CHARS = new Set(['.', '?', '!', ',', ':', ';', '"']);
+
+        // Word separator glyph
+        const WORD_SEPARATOR_GLYPH = ' : ';
+
+        // Punctuation glyph
+        const PUNCTUATION_GLYPH = '.';
+
+
+        // --- Helper Functions ---
+
+         function isVowel(char) {
+            return ALL_VOWELS.has(char);
+        }
+
+        function isConsonantOrSemivowel(char) {
+             return CONSONANT_MAPPING.hasOwnProperty(char);
+        }
+
+        function getRandomGlyph(glyphArray) {
+             if (!Array.isArray(glyphArray) || glyphArray.length === 0) {
+                 return ''; // Should not happen with correct mappings
+             }
+             const randomIndex = Math.floor(Math.random() * glyphArray.length);
+             return glyphArray[randomIndex];
+        }
+
+        function tokenize(text, puncSet) {
+            const tokens = [];
+            let currentToken = "";
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (char === ' ') {
+                    if (currentToken) {
+                        tokens.push(currentToken);
+                    }
+                    tokens.push(' ');
+                    currentToken = "";
+                } else if (puncSet.has(char)) {
+                     if (currentToken) {
+                        tokens.push(currentToken);
+                    }
+                    tokens.push(char); // Keep original punctuation for later mapping
+                    currentToken = "";
+                } else {
+                    currentToken += char;
+                }
+            }
+            if (currentToken) {
+                tokens.push(currentToken);
+            }
+            return tokens;
+        }
+
+        function getWordContext(word) {
+            /**
+             * Determines the hard/soft context for a word based on its first vowel found
+             * after removing ignored characters.
+             * Defaults to 'hard' if no vowels are present.
+             */
+            const cleanedWord = Array.from(word).filter(char => !IGNORED_CHARS.has(char)).join('');
+            for (const char of cleanedWord) {
+                if (HARD_VOWELS.has(char)) {
+                    return 'hard';
+                } else if (SOFT_VOWELS.has(char)) {
+                    return 'soft';
+                }
+            }
+            return 'hard'; // Default context if no vowels
+        }
+
+        // --- Main Transliteration Function ---
+
+        function transliterateOldTurkic() {
+            // Convert entire input to lowercase for case-insensitivity
+            const latinText = document.getElementById('input-text').value.toLowerCase();
+            if (!latinText) {
+                document.getElementById('output-text').value = "";
+                return;
+            }
+
+            const tokens = tokenize(latinText, PUNCTUATION_CHARS);
+            const otTokens = [];
+
+            for (const token of tokens) {
+                if (token === ' ') {
+                    // Add word separator, ensuring no double separators or separator next to punctuation
+                    if (otTokens.length > 0 && otTokens[otTokens.length - 1] !== WORD_SEPARATOR_GLYPH && otTokens[otTokens.length - 1] !== PUNCTUATION_GLYPH) {
+                         otTokens.push(WORD_SEPARATOR_GLYPH);
+                    }
+                } else if (PUNCTUATION_CHARS.has(token)) {
+                    // Add punctuation glyph
+                    otTokens.push(PUNCTUATION_GLYPH);
+                } else if (IGNORED_CHARS.has(token)) {
+                    // Ignore these tokens
+                    continue;
+                } else {
+                    // Process word tokens
+                    // Remove ignored characters within the word first
+                    const word = Array.from(token).filter(char => !IGNORED_CHARS.has(char)).join('');
+
+                    if (!word) {
+                        continue; // Skip empty words after removing ignored chars
+                    }
+
+                    // Determine the word's overall context based on the first vowel
+                    const wordContext = getWordContext(word);
+
+                    let otWord = "";
+                    let i = 0;
+
+                    while (i < word.length) {
+                        let char = word[i];
+                        let handled = false;
+
+                        // 1. Check for Digraphs (longest first)
+                        const digraphs = Object.keys(DIGRAPH_MAPPING).sort((a, b) => b.length - a.length); // Sort by length desc
+                        for (const digraph of digraphs) {
+                            if (i + digraph.length <= word.length && word.substring(i, i + digraph.length) === digraph) {
+                                otWord += DIGRAPH_MAPPING[digraph];
+                                i += digraph.length;
+                                handled = true;
+                                break;
+                            }
+                        }
+
+                        if (handled) {
+                            continue;
+                        }
+
+                        // 2. Check for Single Characters
+                        const isInitial = i === 0;
+                        const isLast = i === word.length - 1;
+
+                        // Vowels
+                        if (isVowel(char)) {
+                            // Write initial vowel if it's the very first character processed
+                            if (isInitial) {
+                                otWord += VOWEL_GLYPHS[char];
+                            }
+                            // Write final vowel if it's the very last character processed
+                            // Only add if it's a multi-character word, single vowels handled by initial check
+                            else if (isLast && word.length > 1) {
+                                otWord += VOWEL_GLYPHS[char];
+                            }
+                            // Middle vowels are skipped implicitly by not adding the glyph here
+                            i++;
+                        }
+                        // Consonants/Semivowels
+                        else if (isConsonantOrSemivowel(char)) {
+                             // Use the determined word context to select the glyph
+                             const glyphInfo = CONSONANT_MAPPING[char];
+                             const glyph = glyphInfo[wordContext];
+
+                             if (Array.isArray(glyph)) {
+                                 // If the mapping is an array (like for 'k'), pick one randomly
+                                 otWord += getRandomGlyph(glyph);
+                             } else {
+                                 // Otherwise, use the single glyph string
+                                 otWord += glyph;
+                             }
+                            i++;
+                        }
+                        // If character is not a digraph (start), vowel, or consonant/semivowel, it's skipped
+                        else {
+                           // console.warn(`Skipping unmapped character: ${char}`); // Optional: Log skipped characters
+                            i++;
+                        }
+                    }
+
+                    if (otWord) { // Only append if the word token resulted in glyphs
+                        otTokens.push(otWord);
+                    }
+                }
+            }
+
+             // Join the tokens.
+            let otText = otTokens.join('');
+
+            // Clean up potential extra spaces around punctuation and separators
+            // Replace " : ." with "." and ". : " with "."
+            otText = otText.replace(new RegExp(WORD_SEPARATOR_GLYPH.trim() + '\\' + PUNCTUATION_GLYPH, 'g'), PUNCTUATION_GLYPH);
+            otText = otText.replace(new RegExp('\\' + PUNCTUATION_GLYPH + WORD_SEPARATOR_GLYPH.trim(), 'g'), PUNCTUATION_GLYPH);
+             // Handle case where punctuation is followed/preceded by a space created by tokenization, e.g., "word ." -> ["word", ".", " "] -> "word." + space -> "word."
+            otText = otText.replace(new RegExp('\\' + PUNCTUATION_GLYPH + ' ', 'g'), PUNCTUATION_GLYPH);
+            otText = otText.replace(new RegExp(' ' + '\\' + PUNCTUATION_GLYPH, 'g'), PUNCTUATION_GLYPH);
+
+
+            // Remove leading/trailing word separators if the original text didn't start/end with a word
+             otText = otText.replace(new RegExp('^' + WORD_SEPARATOR_GLYPH.trim()), '');
+             otText = otText.replace(new RegExp(WORD_SEPARATOR_GLYPH.trim() + '$'), '');
+
+
+            document.getElementById('output-text').value = otText.trim(); // Final trim
+
+        }
+
+        // Add event listener to the button after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('transliterate-button').addEventListener('click', transliterateOldTurkic);
+        });
+
+    </script>
+
+</body>
+</html>
