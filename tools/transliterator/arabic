@@ -230,16 +230,13 @@
          // Map Latin vowel chars to types for the Tanwin rules (Rule 2 internal and Final Tanwin)
           const latinVowelToTypeForTanwin = {
             'a': 'a_like', 'á': 'a_like', 'e': 'a_like', 'é': 'a_like', // a, á, e, é -> ً
-            'u': 'u_like', 'ú': 'u_like', 'û': 'u_like', 'o': 'u_like', 'ó': 'o_like', 'ö': 'o_like', 'ü': 'ü_like', // u, ú, û, o, ó, ö, ü -> ٌ (Grouped loosely by sound)
+            'u': 'u_like', 'ú': 'u_like', 'û': 'u_like', 'o': 'u_like', 'ó': 'u_like', 'ö': 'u_like', 'ü': 'u_like', // u, ú, û, o, ó, ö, ü -> ٌ (Grouped loosely by sound)
             'i': 'i_like', 'í': 'i_like', 'î': 'i_like', // i, í, î -> ٍ
          };
          // Map these types to Tanwin alternatives
           const tanwinMap = {
               'a_like': alternativeMarks['tanwin_a'], // ً
               'u_like': alternativeMarks['tanwin_u'], // ٌ
-              'o_like': alternativeMarks['tanwin_u'], // ٌ
-              'ö_like': alternativeMarks['tanwin_u'], // ٌ
-              'ü_like': alternativeMarks['tanwin_u'], // ٌ
               'i_like': alternativeMarks['tanwin_i'] // ٍ
           };
 
@@ -290,7 +287,7 @@
                  }
                  // Is it blocking? (Any other mark, vowel extender, or sequence part)
                   const isBlocking = isPreventingMarkOrExtender(c);
-                  if(isBlocking && c !== 'ّ') { // Shadda is the only 'preventing' mark we *can* attach *after*
+                  if(isBlocking && c !== 'ّ') { // Shadda is the only 'preventing' mark we *can't* attach *after* a blocking mark
                      return -2; // Indicate blocked search
                   }
              }
@@ -365,6 +362,42 @@
 
                 // --- Rule Priority within a word ---
 
+                 // Check if it's the very first character of the word and it's a vowel
+                 const isInitialVowel = (i === 0 && latinVowels.has(char));
+                 if (isInitialVowel) {
+                     console.log(`  (Special Initial Vowel) Processing initial vowel: ${char} at index ${i}`);
+                     const initialBase = Math.random() < 0.5 ? 'ا' : 'ء'; // Randomly choose initial base
+                     let markToAttach = vowelsShortDiacritic[char]; // Use standard mapping for initial vowels
+
+                     // Ensure standard marks for a/á and i/í/î at the beginning
+                     if (char === 'a' || char === 'á') {
+                          markToAttach = 'َ'; // Always standard Fatha at the start for a/á
+                          console.log(`  Forcing standard Fatha ('َ') for initial vowel '${char}'.`);
+                      } else if (char === 'i' || char === 'í' || char === 'î') {
+                           markToAttach = 'ِ'; // Always standard Kasra at the start for i/í/î
+                           console.log(`  Forcing standard Kasra ('ِ') for initial vowel '${char}'.`);
+                      } else {
+                           // Other vowels (e,é,u,ú,û,o,ó,ö,ü) use their standard initial mapping (usually َ or ُ)
+                            console.log(`  Using standard initial mark '${markToAttach}' for vowel '${char}'.`);
+                      }
+
+
+                     arabicWordChars.push(initialBase); // Add the base (ا or ء)
+                     if (markToAttach) {
+                          arabicWordChars.push(markToAttach); // Add the standard diacritic mark
+                           console.log(`  Added initial vowel representation '${initialBase}${markToAttach}'. Array: ${arabicWordChars.join('')}`);
+                     } else {
+                          console.warn(`  Initial vowel '${char}' has no standard mapped diacritic. Added base '${initialBase}' only.`);
+                     }
+
+                     lastSimpleVowelLatinChar = char; // Track the Latin char
+                     console.log(`  Updated lastSimpleVowelLatinChar to ${lastSimpleVowelLatinChar} after initial vowel.`);
+
+                     i++; // Processed the single initial vowel Latin char
+                     continue; // Move to next Latin char
+                 }
+
+
                 // 1. Handle Specific Multi-Character Sequences (Gemination, Vowel Sequences, iy)
                 // Gemination check (already covers 2 chars)
                  const isPotentialGeminatingConsonantAtI = isPotentialGeminatingConsonant(char);
@@ -408,7 +441,8 @@
 
                 // 2. Handle VOWEL + N/Ñ pair (Tanwin Alternative or Standard C+N+Sukun)
                  const isPotentialVowelNNPair = latinVowels.has(char) && (nextChar === 'n' || nextChar === 'ñ') && (i + 1 < latinWord.length);
-                 if (isPotentialVowelNNPair) {
+                 // This rule applies to V+N/Ñ pairs *not* at the very start (i > 0) AND not followed by another vowel
+                 if (isPotentialVowelNNPair && i > 0) {
                      console.log(`  (Rule 2) Detected potential Vowel+N/Ñ pair: ${char}${nextChar} at index ${i}.`);
                      const nextNextChar = latinWord[i + 2];
                      const isFollowedByVowel = (i + 2 < latinWord.length) && latinVowels.has(nextNextChar);
@@ -434,11 +468,17 @@
                                  // Fallback to standard if Tanwin map fails for this vowel type (shouldn't happen with current maps)
                                  // Process as Standard CVn below - always standard vowel mark here
                                   let standardVowelMark = vowelsShortDiacritic[char];
-                                  if (standardVowelMark) arabicWordChars.push(standardVowelMark);
-                                  const arabicConsonant = consonantsBase[nextChar]; // 'n' or 'ñ' -> 'ن' or 'ڭ'
-                                  arabicWordChars.push(arabicConsonant);
-                                  arabicWordChars.push('ْ'); // Add Sukun
-                                  lastSimpleVowelLatinChar = char; // Keep vowel info for potential END-OF-WORD Tanwin later
+                                  if ((char === 'i' || char === 'í' || char === 'î') && standardVowelMark === 'ِ') { standardVowelMark = Math.random() < 0.5 ? alternativeMarks['alt_i'] : 'ِ'; console.log(`  Randomly chose alternative mark '${standardVowelMark}' for '${char}' (V+N/Ñ Tanwin fallback).`);} // 50% chance for ٖ
+
+                                  // IMPORTANT: For the Vowel+N/Ñ fallback to standard CVn, DO NOT apply the 'a'/'á' randomization here.
+                                  // Those alternatives like َا, َو, َی, ٰ, ٰا, ٰو, ٰی are specific to vowel marks *not* followed immediately by the 'ن' or 'ڭ' consonant.
+                                  // Standard CVn mapping is VowelMark + Consonant + Sukun. The VowelMark here should be standard َ or ِ or ُ.
+
+                                 if (standardVowelMark) arabicWordChars.push(standardVowelMark);
+                                 const arabicConsonant = consonantsBase[nextChar]; // 'n' or 'ñ' -> 'ن' or 'ڭ'
+                                 arabicWordChars.push(arabicConsonant);
+                                 arabicWordChars.push('ْ'); // Add Sukun
+                                 lastSimpleVowelLatinChar = char; // Keep vowel info for potential END-OF-WORD Tanwin later
                                  console.log(`  Added standard representation (fallback) '${standardVowelMark || ''}${arabicConsonant}ْ'. Array: ${arabicWordChars.join('')}`);
                              }
                              i += 2; // Processed both Latin chars (Vowel + N/Ñ)
@@ -448,6 +488,11 @@
                              console.log(`  Randomly chose standard Vowel+N/Ñ representation. Processing as Standard CVn.`);
                              // Process as Standard CVn below - always standard vowel mark here
                               let standardVowelMark = vowelsShortDiacritic[char];
+                              if ((char === 'i' || char === 'í' || char === 'î') && standardVowelMark === 'ِ') { standardVowelMark = Math.random() < 0.5 ? alternativeMarks['alt_i'] : 'ِ'; console.log(`  Randomly chose alternative mark '${standardVowelMark}' for '${char}' (V+N/Ñ standard).`);} // 50% chance for ٖ
+
+                              // IMPORTANT: Again, for the Vowel+N/Ñ standard CVn path, DO NOT apply the 'a'/'á' randomization here.
+                              // Those alternatives are not used in the V + C + Sukun pattern.
+
                               if (standardVowelMark) arabicWordChars.push(standardVowelMark);
                               const arabicConsonant = consonantsBase[nextChar]; // 'n' or 'ñ' -> 'ن' or 'ڭ'
                               arabicWordChars.push(arabicConsonant);
@@ -458,17 +503,48 @@
                              i += 2; // Processed both Latin chars (Vowel + N/Ñ)
                              continue; // Move to next Latin char index i+2
                          }
-                     } else { // isFollowedByVowel is true (CVnV) - This pair is NOT handled here, fall through
-                         console.log(`  Pair ${char}${nextChar} is followed by vowel. Not eligible for internal Tanwin alternative. Falling through to standard vowel/consonant handling.`);
-                         // i is NOT incremented here, the vowel (char) will be processed next by Rule 3
+                     } else if (isPotentialVowelNNPair && i === 0) { // *** ADDED CASE: Vowel+N/Ñ at the beginning ***
+                           console.log(`  Pair ${char}${nextChar} is at the start (i=0). Internal Tanwin alternative skipped. Forcing standard CVn.`);
+                           // Always force standard CVn representation at the start
+                           let standardVowelMark = vowelsShortDiacritic[char];
+                            // Apply initial vowel restrictions for the mark itself (already handled in the Initial Vowel block, but repeat for clarity/safety)
+                           if (char === 'a' || char === 'á') { standardVowelMark = 'َ'; }
+                           else if (char === 'i' || char === 'í' || char === 'î') { standardVowelMark = 'ِ'; }
+                           // For other vowels (e,é,u,etc), standardVowelMark is already correct (َ or ُ)
+
+                           // Add the initial base (ا or ء) followed by the standard mark
+                           const initialBase = Math.random() < 0.5 ? 'ا' : 'ء';
+                           arabicWordChars.push(initialBase);
+                           if (standardVowelMark) {
+                               arabicWordChars.push(standardVowelMark);
+                           } else {
+                                console.warn(`  Initial V+N/Ñ vowel '${char}' has no standard mapped diacritic. Added base '${initialBase}' only.`);
+                           }
+
+                           // Then add the N/Ñ consonant and Sukun
+                           const arabicConsonant = consonantsBase[nextChar]; // 'n' or 'ñ' -> 'ن' or 'ڭ'
+                           arabicWordChars.push(arabicConsonant);
+                           arabicWordChars.push('ْ'); // Add Sukun
+
+                           lastSimpleVowelLatinChar = char; // Keep vowel info for potential END-OF-WORD Tanwin later
+                           console.log(`  Added initial V+N/Ñ representation (forced standard) '${initialBase}${standardVowelMark || ''}${arabicConsonant}ْ'. Array: ${arabicWordChars.join('')}`);
+
+                           i += 2; // Processed both Latin chars (Vowel + N/Ñ)
+                           continue; // Move to next Latin char index i+2
+
+                     } else { // isPotentialVowelNNPair is false or isFollowedByVowel is true (and not i===0)
+                          // Fall through to other rules
+                         if (isPotentialVowelNNPair && isFollowedByVowel) { console.log(`  Pair ${char}${nextChar} is followed by vowel. Not eligible for internal Tanwin alternative. Falling through to standard vowel/consonant handling.`); }
+                          // If not a Vowel+N/Ñ pair or if it's Vowel+N/Ñ followed by vowel, it will be handled by Rule 3 (Vowel) then Rule 4 (Consonant).
                      }
                 } // End Rule 2 (VOWEL + N/Ñ pair)
 
 
                 // 3. Handle Single Vowels (Applies if not part of Sequence or Vowel+N/Ñ pair that was handled by 'continue')
+                // This rule is now for vowels *after* the first character.
                 const isCurrentCharVowel = latinVowels.has(char);
                  if (isCurrentCharVowel) {
-                      console.log(`  (Rule 3) Processing single vowel: ${char} at index ${i}`);
+                      console.log(`  (Rule 3) Processing single vowel (not initial): ${char} at index ${i}`);
                       let addedSpecialCase = false; // Flag for specific vowel handling paths within this block
 
                       // --- ّ+ا+ِ Rule: If Shadda (ّ) is followed by Kasra (ِ), insert Alef (ا) ---
@@ -479,31 +555,6 @@
                          lastSimpleVowelLatinChar = char; console.log(`  Applied rule, inserted 'ا' and 'ِ'. Array: ${arabicWordChars.join('')}. Updated lastSimpleVowelLatinChar to ${lastSimpleVowelLatinChar}.`);
                      }
                     // --- End of ّ+ا+ِ Rule ---
-
-                    // --- Initial Vowel Handling (Applies only if not handled by ّ+ا+ِ) ---
-                    // Restrict 'a'/'á' to َ and 'i'/'í'/'î' to ِ at the very start of a word
-                    if (!addedSpecialCase && i === 0) {
-                        console.log(`  Handling initial vowel: '${char}' at index ${i}. Applying random ء/ا.`);
-                        let markToAttach = vowelsShortDiacritic[char]; // Default standard mapping
-
-                        // --- Apply Initial Vowel Restrictions ---
-                        if (char === 'a' || char === 'á') {
-                             markToAttach = 'َ'; // Always standard Fatha at the start for a/á
-                            console.log(`  Forcing standard Fatha ('َ') for initial vowel '${char}'.`);
-                        } else if (char === 'i' || char === 'í' || char === 'î') {
-                             markToAttach = 'ِ'; // Always standard Kasra at the start for i/í/î
-                            console.log(`  Forcing standard Kasra ('ِ') for initial vowel '${char}'.`);
-                        } else {
-                            // Other vowels (e,é,u,ú,û,o,ó,ö,ü) use their standard initial mapping (usually َ or ُ)
-                             console.log(`  Using standard initial mark '${markToAttach}' for vowel '${char}'.`);
-                        }
-                        // --- End Initial Vowel Restrictions ---
-
-
-                        if (markToAttach) { const initialBase = Math.random() < 0.5 ? 'ا' : 'ء'; arabicWordChars.push(initialBase); arabicWordChars.push(markToAttach); console.log(`  Added initial vowel representation '${initialBase}${markToAttach}'. Array: ${arabicWordChars.join('')}`); lastSimpleVowelLatinChar = char; console.log(`  Updated lastSimpleVowelLatinChar to ${lastSimpleVowelLatinChar}.`); addedSpecialCase = true; }
-                        else { console.warn(`  Vowel '${char}' at start has no mapped diacritic. Skipping.`); lastSimpleVowelLatinChar = null; console.log("  Reset vowel tracking."); addedSpecialCase = true; }
-                    }
-                    // --- End Initial Vowel Handling ---
 
                     // --- Vowel After Extender Sequence Handling (ُوِ, ِیَ etc.) ---
                     // Apply 'a'/'á' randomization here (not initial vowel)
@@ -541,28 +592,59 @@
 
                     // --- Vowel After Vowel ('ا' Insertion) Handling ---
                      // Apply 'a'/'á' randomization here (not initial vowel)
-                    if (!addedSpecialCase && prevLatin !== null && latinVowels.has(prevLatin) && !latinVowelSequences.has(prevLatin + char) && nextTwoChars !== 'iy') { // Exclude 'iy' as it's handled as a sequence
-                         console.log(`  Current vowel '${char}' follows previous Latin vowel '${prevLatin}'. Pair '${prevLatin + char}' is not a predefined sequence (excluding iy). Inserting 'ا'.`);
-                         const insertIndexForAlef = arabicWordChars.length; arabicWordChars.splice(insertIndexForAlef, 0, 'ا'); const alefIndex = insertIndexForAlef; console.log(`  Inserted 'ا' at index ${alefIndex}. Array: ${arabicWordChars.join('')}`);
-                         let markToAttach = vowelsShortDiacritic[char];
+                     // Also handle vowels after a V+N/Ñ sequence that was NOT turned into an internal Tanwin (e.g. in 'barganda', the 'a' after 'n')
+                    if (!addedSpecialCase && prevLatin !== null && (latinVowels.has(prevLatin) || (prevLatin === 'n' || prevLatin === 'ñ')) && !latinVowelSequences.has(prevLatin + char) && nextTwoChars !== 'iy') { // Exclude 'iy' as it's handled as a sequence
+                         console.log(`  Current vowel '${char}' follows previous Latin vowel/non-tanwin N/Ñ '${prevLatin}'. Pair '${prevLatin + char}' is not a predefined sequence (excluding iy). Inserting 'ا'.`);
+                         // Insert 'ا' after the last sequence part, or after the consonant from Rule 2 fallback/standard
+                         const insertIndexForAlef = arabicWordChars.length;
+                          // If the *immediately* preceding char in arabicWordChars is a consonant that came from the prevLatin N/Ñ,
+                          // insert 'ا' *after* that consonant + its sukun, effectively after the C+Sukun cluster.
+                          // Otherwise, insert at the end.
+                           let actualInsertIndexForAlef = arabicWordChars.length;
+                           // Check if the last few chars are Consonant + Sukun (from Rule 2 fallback/standard)
+                           if (arabicWordChars.length >= 2 && arabicWordChars[arabicWordChars.length - 1] === 'ْ' && allArabicConsonants.has(arabicWordChars[arabicWordChars.length - 2])) {
+                                actualInsertIndexForAlef = arabicWordChars.length; // Insert after the Sukun
+                           } else {
+                                // If the previous char was a vowel extender (ا, و, ی) or mark (َ, ِ, ُ, etc.), we might need to insert AFTER it.
+                                // This is complex; for simplicity and correctness based on the rule structure,
+                                // inserting 'ا' always at the end *unless* after a specific sequence ending is safer.
+                                // Let's revert to simpler: insert 'ا' always at the end of the current arabicWordChars array
+                                // if not following a *predefined* sequence ending.
+                                // The previous rule (Vowel After Extender Sequence) handles cases where it *should* attach to the end of a sequence.
+                                // This rule (Vowel After Vowel) implies inserting 'ا'.
+                                // Let's re-evaluate: "bui -> بُاِ". The 'u' gives بُ, then 'i' gives اِ. The اِ attaches to the end.
+                                // "barganda", 'n' is not followed by vowel, gets ْ. بَارْغَانْ + دَا. The 'a' after 'n' triggers Vowel After Vowel.
+                                // The preceding Latin was 'n'. Its Arabic mapping was َن. No, َن is for vowel 'a'. 'n' -> نْ.
+                                // So the previous character processed was 'n', which resulted in نْ being added.
+                                // Current char 'a' after this 'n'. Rule: Vowel after Consonant? No, previous Latin was consonant 'n'.
+                                // Rule: Vowel after Vowel? Yes, if considering syllable structure abstractly.
+                                // Let's stick to the simpler logic: Vowel after Latin Vowel -> insert ا. Vowel after Latin Consonant -> attach mark to consonant.
+                                // The Vowel After Vowel logic should *only* trigger if prevLatin was a vowel and the pair isn't a sequence.
 
-                          // --- Apply Randomization for 'a' or 'á' after inserted 'ا' ---
-                           if (char === 'a') { const alternatives = aDecorationAlternativesForA; const numAlternatives = alternatives.length; const randomChoice = Math.random(); const step = 1 / numAlternatives; let chosenAlternative = alternatives[0]; for (let k = 0; k < numAlternatives; k++) { if (randomChoice < step * (k + 1)) { chosenAlternative = alternatives[k]; break; } } markToAttach = chosenAlternative; console.log(`  Randomly chose mark alternative '${markToAttach}' for '${char}' after 'ا'.`); }
-                           else if (char === 'á') { const alternatives = aDecorationAlternativesForÁ; const numAlternatives = alternatives.length; const randomChoice = Math.random(); const step = 1 / numAlternatives; let chosenAlternative = alternatives[0]; for (let k = 0; k < numAlternatives; k++) { if (randomChoice < step * (k + 1)) { chosenAlternative = alternatives[k]; break; } } markToAttach = chosenAlternative; console.log(`  Randomly chose mark alternative '${markToAttach}' for '${char}' after 'ا'.`); }
-                          // --- End Randomization for 'a'/'á' ---
+                                // Let's refine the Vowel After Vowel logic check:
+                                // Trigger only if prevLatin IS a vowel:
+                                if (prevLatin !== null && latinVowels.has(prevLatin) && !latinVowelSequences.has(prevLatin + char) && nextTwoChars !== 'iy') {
+                                    console.log(`  (Rule 3 - Vowel After Vowel) Current vowel '${char}' follows previous Latin vowel '${prevLatin}'. Pair '${prevLatin + char}' is not a predefined sequence (excluding iy). Inserting 'ا'.`);
+                                     arabicWordChars.splice(arabicWordChars.length, 0, 'ا'); // Insert 'ا' at the end
+                                     const alefIndex = arabicWordChars.length - 1; // Index of the inserted 'ا'
+                                     console.log(`  Inserted 'ا' at index ${alefIndex}. Array: ${arabicWordChars.join('')}`);
+                                     let markToAttach = vowelsShortDiacritic[char];
+                                      // Apply randomization for 'a' or 'á'
+                                      if (char === 'a') { const alternatives = aDecorationAlternativesForA; const numAlternatives = alternatives.length; const randomChoice = Math.random(); const step = 1 / numAlternatives; let chosenAlternative = alternatives[0]; for (let k = 0; k < numAlternatives; k++) { if (randomChoice < step * (k + 1)) { chosenAlternative = alternatives[k]; break; } } markToAttach = chosenAlternative; console.log(`  Randomly chose mark alternative '${markToAttach}' for '${char}' after 'ا'.`); }
+                                      else if (char === 'á') { const alternatives = aDecorationAlternativesForÁ; const numAlternatives = alternatives.length; const randomChoice = Math.random(); const step = 1 / numAlternatives; let chosenAlternative = alternatives[0]; for (let k = 0; k < numAlternatives; k++) { if (randomChoice < step * (k + 1)) { chosenAlternative = alternatives[k]; break; } } markToAttach = chosenAlternative; console.log(`  Randomly chose mark alternative '${markToAttach}' for '${char}' after 'ا'.`); }
+                                       // Apply randomization for i/í/î
+                                       if ((char === 'i' || char === 'í' || char === 'î') && markToAttach === 'ِ') { if (Math.random() < 0.5) { markToAttach = alternativeMarks['alt_i']; console.log(`  Randomly chose alternative mark '${markToAttach}' for '${char}' after 'ا'.`); } else { console.log(`  Randomly chose standard mark '${markToAttach}' for '${char}' after 'ا'.`); } }
 
-                          // --- Apply Randomization for i/í/î after inserted 'ا' ---
-                           if ((char === 'i' || char === 'í' || char === 'î') && markToAttach === 'ِ') { if (Math.random() < 0.5) { markToAttach = alternativeMarks['alt_i']; console.log(`  Randomly chose alternative mark '${markToAttach}' for '${char}' after 'ا'.`); } else { console.log(`  Randomly chose standard mark '${markToAttach}' for '${char}' after 'ا'.`); } }
-                          // --- End Randomization for i/í/î ---
-
-                          if (markToAttach) { const insertIndexForMark = alefIndex + 1; arabicWordChars.splice(insertIndexForMark, 0, markToAttach); console.log(`  Attached mark '${markToAttach}' to 'ا'. Array: ${arabicWordChars.join('')}`); lastSimpleVowelLatinChar = char; console.log(`  Updated lastSimpleVowelLatinChar to ${lastSimpleVowelLatinChar}.`); }
-                          else { console.warn(`  Vowel '${char}' after 'ا' has no mapped diacritic. Skipping attachment.`); lastSimpleVowelLatinChar = null; console.log("  Reset vowel tracking after skipped attachment."); }
-                          addedSpecialCase = true;
+                                     if (markToAttach) { arabicWordChars.splice(alefIndex + 1, 0, markToAttach); console.log(`  Attached mark '${markToAttach}' to 'ا'. Array: ${arabicWordChars.join('')}`); lastSimpleVowelLatinChar = char; console.log(`  Updated lastSimpleVowelLatinChar to ${lastSimpleVowelLatinChar}.`); }
+                                     else { console.warn(`  Vowel '${char}' after 'ا' has no mapped diacritic. Skipping attachment.`); lastSimpleVowelLatinChar = null; console.log("  Reset vowel tracking after skipped attachment."); }
+                                     addedSpecialCase = true;
+                                } // End of actual Vowel After Vowel check logic
+                           }
                     }
                     // --- End Vowel After Vowel Handling ---
 
-                   // --- Standard Single Vowel Handling (Applies only if not handled by special cases) ---
-                   // Apply 'a'/'á' randomization here (not initial vowel)
+                   // --- Standard Single Vowel Handling (Applies only if not handled by special cases like initial or sequences) ---
+                   // This path is for vowels after consonants or sequence characters that don't form the "vowel after extender" pattern.
                    if (!addedSpecialCase) {
                        console.log(`  Handling standard single vowel '${char}' after consonant or non-extender sequence.`);
                        let attachIndex = findLastDiacriticAttachPointIndex(arabicWordChars);
@@ -795,7 +877,7 @@
 
                  if (isCurrentSegmentWord) {
                      // Transliterate the current word and store it as pending for the *next* iteration or end of loop.
-                     // This transliteration step *includes* adding intermediate Sukuns and applying the 'a'/'á' and Vowel+N/Ñ internal randomization.
+                     // This transliteration step *includes* adding intermediate Sukuns and applying the 'a'/'á' and Vowel+N/Ñ internal randomization (when allowed).
                      const { arabicChars, lastSimpleVowelLatinChar: currentWordVowelLatinChar } = transliterateWord(currentSegment);
                      pendingWordArabic = arabicChars; // This array now contains intermediate Sukuns and randomized marks/alternatives
                      pendingWordLatin = currentSegment;
@@ -823,9 +905,8 @@
                      // Add the separator itself (already handled the pending word if any)
                      // Map digits and symbols if necessary
                      let mappedSeparator = currentSegment;
-                     // Only map if the segment is a single character that has a mapping
-                     if (currentSegment.length === 1) {
-                          const char = currentSegment[0];
+                     if (currentSegment.length > 0) { // Ensure segment is not empty
+                          const char = currentSegment[0]; // Take the first char for mapping
                            if (symbolMap[char]) {
                               mappedSeparator = symbolMap[char];
                            } else if (digitMap[char]) {
