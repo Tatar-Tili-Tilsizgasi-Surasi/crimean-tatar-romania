@@ -245,18 +245,19 @@
 
 
           // Alternative marks for the 'a'/'á' decoration rule (Applied during standard vowel handling, NOT initial)
-          // Includes new alternatives ٰ, ٰا, ٰو, ٰی
           const aDecorationAlternativesForA = ['َ', 'َا', 'َو', 'َی', 'ٰ', 'ٰا', 'ٰو', 'ٰی']; // 8 options for 'a'
-          const aDecorationAlternativesForÁ = ['َ', 'َا', 'ٰ', 'ٰا']; // 4 options for 'á' (using َ, َا from prev version + ٰ, ٰا)
+          const aDecorationAlternativesForÁ = ['َ', 'َا', 'ٰ', 'ٰا']; // 4 options for 'á'
 
 
         // Punctuation symbols
         const punctuationSymbolsSet = new Set(['!', '.', ',', '?', ';', '"', ':', '-']);
 
+        // Symbol map *excluding* the single quote, which is now ignored
         const symbolMap = {
             '!': '؞', '.': '۔', ',': '،', '?': '؟', ';': '؛', ':': ':',
             '"': 'ۧ', '-': '؍', '(': '؍', ')': '؍', '%': '٪',
-            "'": 'ء', ' ': ' ' // Include space for splitting
+            // Removed "'": 'ء'
+             ' ': ' ' // Include space for splitting
         };
 
         const digitMap = {
@@ -265,6 +266,7 @@
         };
 
         // Separator characters (based on symbolMap, digitMap, and anything not a Latin letter)
+        // Exclude the single quote as it is ignored
         const separatorChars = new Set([...Object.keys(symbolMap), ...Object.keys(digitMap)]);
 
 
@@ -309,6 +311,13 @@
             for (let i = 0; i < latin.length; i++) {
                 const char = latin[i]; // Keep original case for separators like ? ! etc.
                 const lowerChar = char.toLowerCase();
+
+                // Check if the character should be ignored (currently only single quote)
+                if (char === "'") {
+                    console.log(`  Ignoring character: '${char}'`);
+                    continue; // Skip this character entirely
+                }
+
 
                 const isSeparator = separatorChars.has(char) || separatorChars.has(lowerChar) || !isLatinLetter(lowerChar); // Check both cases for separators
 
@@ -370,7 +379,7 @@
                        } else { console.warn(`  Gemination '${char}${char}' found, but no Arabic consonant mapping for '${char}'. Treating as single chars.`); } // Fall through
                  }
 
-                 // Vowel Sequences check (aa, ee, aá, áa, áá, ii, oo, uw, úw)
+                 // Vowel Sequences check (aa, ee, aá, áa, áá, ii, oo, uw,úw)
                  if (i + 1 < latinWord.length && latinVowelSequences.has(nextTwoChars)) {
                       console.log(`  (Rule 1.2a) Processing sequence: ${nextTwoChars} at index ${i}`);
                       let sequenceArabic = null;
@@ -760,13 +769,15 @@
 
              for (let i = 0; i < segments.length; i++) {
                  const currentSegment = segments[i];
-                 const isCurrentSegmentWord = currentSegment.length > 0 && isLatinLetter(currentSegment[0]); // Check if segment starts with a letter
+                 // A segment is a word if it's not empty and the first character is a Latin letter
+                 const isCurrentSegmentWord = currentSegment.length > 0 && isLatinLetter(currentSegment[0]);
                  const isLastSegment = (i === segments.length - 1);
 
                  // If there is a pending word from the previous segment, process its final mark now
                  if (pendingWordArabic !== null) {
                       // Determine if the pending word should get the END-OF-WORD Tanwin vs Sukun
                       // It needs END-OF-WORD Tanwin IF the current segment is punctuation OR IF the current segment is the absolute last segment.
+                      // Check if the current segment is a non-empty separator and maps to punctuation
                        const isCurrentSegmentPunctuation = (currentSegment !== null && currentSegment.length > 0 && punctuationSymbolsSet.has(currentSegment[0]));
                        const pendingWordNeedsTanwin = isCurrentSegmentPunctuation || isLastSegment;
 
@@ -812,15 +823,21 @@
                      // Add the separator itself (already handled the pending word if any)
                      // Map digits and symbols if necessary
                      let mappedSeparator = currentSegment;
-                     if (currentSegment.length > 0) { // Ensure segment is not empty
-                          const char = currentSegment[0]; // Take the first char for mapping
+                     // Only map if the segment is a single character that has a mapping
+                     if (currentSegment.length === 1) {
+                          const char = currentSegment[0];
                            if (symbolMap[char]) {
                               mappedSeparator = symbolMap[char];
                            } else if (digitMap[char]) {
                                 mappedSeparator = digitMap[char];
-                           } else if (currentSegment === '\n') { // Handle newline specifically if needed, though split handles it
-                               mappedSeparator = '\n'; // Keep newline as is
+                           } else if (char === '\n') { // Keep newline character
+                               mappedSeparator = '\n';
                            }
+                           // If it was a single quote, it was already skipped in splitIntoWordsAndSeparators,
+                           // so it won't appear here as a segment.
+                           // If it's some other unmapped single character separator, it's added as is.
+                     } else if (currentSegment === '\n') { // Handle potential multi-character newlines just in case, although split should handle them
+                         mappedSeparator = '\n';
                      }
                      finalArabicOutput += mappedSeparator;
                  }
