@@ -78,7 +78,12 @@
 
     <div class="rules">
          <!-- Rule text removed as requested -->
-         <p><i>Click "Transliterate" another one time to get different random variations for alternative spellings.</i></p>
+         <p><i>Click "Transliterate" another one time to get different random variations for alternative spellings. 
+But one problem is this two important rules are not included:
+
+1— If ـّ fallows ـٍ it needs to be ا between them (e.g. hakkîñ = هَقّاٍ (or other alternatives, but not هَقٍّ).
+
+2— One letter and Tanwin (ـٍ / ـً / ـٌ) is not allowed (e.g. men = مَنً (or other alternatives, but not مً).</i></p>
     </div>
 
 
