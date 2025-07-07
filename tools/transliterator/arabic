@@ -247,7 +247,7 @@
 
 
         // Punctuation symbols
-        const punctuationSymbolsSet = new Set(['!', '.', ',', '?', ';', '"', ':', '-']);
+        const punctuationSymbolsSet = new Set(['!', '.', ',', '?']);
 
         // Symbol map *excluding* the single quote, which is now ignored
         const symbolMap = {
