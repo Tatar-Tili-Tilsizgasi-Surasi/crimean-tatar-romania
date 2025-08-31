@@ -31,9 +31,5 @@ A key focus is understanding the distinction between "authentic" Tatar spoken an
 
 Contributions are welcome! If you have knowledge of Crimean Tatar spoken in Romania, linguistic expertise, or can provide additional sources or examples, please feel free to open issues or pull requests.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 *Based on materials including "The Sounds of Tatar Spoken in Romania" by Taner Murat and historical documents.*
