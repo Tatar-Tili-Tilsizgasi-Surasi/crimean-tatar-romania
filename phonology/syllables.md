@@ -1,4 +1,4 @@
-# Syllable Structure (Eğík) and Syllabification
+# Syllable Structure (Eğík) and Syllabification (El-Korezmiy ifadesí)
 
 The syllable (`eğík`) in Crimean Tatar spoken in Romania has a specific structure and rules governing its formation and division.
 
@@ -44,7 +44,7 @@ Based on the structure and constraints, there are six permissible syllable types
 
 ## Syllabification (Al-Kwarizmi Law)
 
-In polysyllabic words, the division into syllables follows a deterministic algorithm, known as the **Al-Kwarizmi law of syllabification**. This law is based on the principle of least effort (Eñ az zahmetlí eğíkleme), which ensures the minimum intersyllabic effort by placing maximum intrasyllabic load on the final syllable.
+In polysyllabic words, the division into syllables follows a deterministic algorithm, known as the **Al-Kwarizmi law of syllabification** (El-Korezmiy ifadesí). This law is based on the principle of least effort (Eñ az zahmetlí eğíkleme), which ensures the minimum intersyllabic effort by placing maximum intrasyllabic load on the final syllable.
 
 The process essentially works backward from the end of the word, identifying valid syllable types and ensuring harmony.
 
